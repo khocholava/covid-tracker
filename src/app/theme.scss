@@ -1,0 +1,49 @@
+@use '~@angular/material' as mat;
+
+@include mat.core();
+
+$customPalette: (
+  50 : #e6e7ef,
+  100 : #c1c2d7,
+  200 : #989abd,
+  300 : #6e71a2,
+  400 : #4f528e,
+  500 : #30347a,
+  600 : #2b2f72,
+  700 : #242767,
+  800 : #1e215d,
+  900 : #13154a,
+  A100 : #8588ff,
+  A200 : #5256ff,
+  A400 : #1f24ff,
+  A700 : #060bff,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #ffffff,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #ffffff,
+    A400 : #ffffff,
+    A700 : #ffffff,
+  )
+);
+
+$my-primary: mat.define-palette($customPalette, 500);
+$my-accent: mat.define-palette($customPalette, A200, A100, A400);
+$my-warn: mat.define-palette(mat.$red-palette);
+
+$customTheme: mat.define-light-theme((
+  color: (
+    primary: $my-primary,
+    accent: $my-accent,
+    warn: $my-warn,
+  )
+));
+@include mat.core-theme($customTheme);

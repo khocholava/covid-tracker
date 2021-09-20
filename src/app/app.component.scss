@@ -1,0 +1,14 @@
+@import "styles/mixins";
+
+:host {
+  @include flexCenter;
+  flex-direction: column;
+  width: 100%;
+
+  .content {
+    max-width: 1040px;
+    background-color: red;
+    height: 100px;
+    width: 100%;
+  }
+}

@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./app/styles/mixins";
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif !important;
+  background: #f0f8ff38
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
