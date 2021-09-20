@@ -16,6 +16,12 @@ export interface CovidSummaryGlobalType {
   Date: string
 }
 
+
+export interface CovidStatData {
+  majorStats: Array<MajorCovidStats>;
+  countries: Array<CovidSummaryCountryType> | undefined;
+}
+
 export interface CovidSummaryCountryType {
   ID: string;
   Country: string;
@@ -29,3 +35,19 @@ export interface CovidSummaryCountryType {
   TotalRecovered: number;
   Date: string
 }
+
+
+export interface MajorCovidStats {
+  title: CovidStatusType;
+  stat: number
+  percentage: string
+  color: string,
+}
+export enum COVID_STATUS {
+  TotalConfirmed = 'Total Confirmed',
+  ActiveConfirmed = 'Active Confirmed',
+  TotalRecovered = 'Total Recovered',
+  TotalDeaths = 'Total Deaths'
+}
+
+export type CovidStatusType = 'Total Confirmed' | 'Active Confirmed' | 'Total Recovered' | 'Total Deaths'

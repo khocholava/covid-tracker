@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'https://covidtracking.com/api'
+  covidTrackingUrl: 'https://covidtracking.com/api',
+  summaryUrl: 'https://api.covid19api.com/summary'
 };
 
 /*

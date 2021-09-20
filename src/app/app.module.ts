@@ -5,7 +5,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
 import {TranslocoRootModule} from './transloco/transloco-root.module';
 import {MatSliderModule} from '@angular/material/slider';
-import {API_BASE_URL} from './tokens';
+import {COVID_TRACKING_API_BASE_URL, SUMMARY_API_BASE_URL} from './tokens';
 import {environment} from '../environments/environment';
 import {CovidDataService} from './services/covid-data.service';
 import {NavbarComponent} from './components/navbar/navbar.component';
@@ -14,6 +14,7 @@ import {MatTableModule} from '@angular/material/table';
 import { CardComponent } from './components/card/card.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {StoreService} from './services/store.service';
 
 @NgModule({
   declarations: [
@@ -34,11 +35,17 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
   ],
   providers: [
     {
-      provide: API_BASE_URL,
-      useValue: environment.baseUrl,
+      provide: COVID_TRACKING_API_BASE_URL,
+      useValue: environment.covidTrackingUrl,
+      multi: true,
+    },
+    {
+      provide: SUMMARY_API_BASE_URL,
+      useValue: environment.summaryUrl,
       multi: true,
     },
     CovidDataService,
+    StoreService
   ],
   bootstrap: [AppComponent],
 })

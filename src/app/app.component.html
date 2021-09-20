@@ -2,5 +2,8 @@
 [title]="'navbar_logo' | transloco"
 ></app-navbar>
 <div class="content">
-<h2>{{"2021-09-20T19:09:56.351Z" | date: 'dd/mm/yyyy'}}</h2>
+<pre>
+<!--  {{data$ | async | json}}-->
+  {{countries$ | async | json}}
+</pre>
 </div>
