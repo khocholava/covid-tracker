@@ -24,7 +24,7 @@ export class CovidDataService {
   }
 
   getData(): Observable<CovidStatData> {
-    return this.http.get<CovidSummaryType>('https://api.covid19api.com/summary').pipe(
+    return this.http.get<CovidSummaryType>(`${this.summaryUrl}/summary`).pipe(
       map((response: Partial<CovidSummaryType>) => {
         const {Global, Countries} = response;
         const {
@@ -82,4 +82,7 @@ export class CovidDataService {
     )
   }
 
+  getCountryData(countryCode: string) {
+    return this.http.get(`${this.summaryUrl}/total/dayone/country/${countryCode}`)
+  }
 }

@@ -15,6 +15,14 @@ import { CardComponent } from './components/card/card.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {StoreService} from './services/store.service';
+import {MatCardModule} from '@angular/material/card';
+import {MatIconModule} from '@angular/material/icon';
+import { TableComponent } from './components/table/table.component';
+import {MatButtonModule} from '@angular/material/button';
+import { DataPropertyGetterPipe } from './components/table/data-property-getter.pipe';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -22,6 +30,8 @@ import {StoreService} from './services/store.service';
     NavbarComponent,
     CardComponent,
     SpinnerComponent,
+    TableComponent,
+    DataPropertyGetterPipe,
   ],
   imports: [
     BrowserModule,
@@ -32,6 +42,12 @@ import {StoreService} from './services/store.service';
     MatToolbarModule,
     MatTableModule,
     MatProgressSpinnerModule,
+    MatCardModule,
+    MatIconModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatPaginatorModule,
   ],
   providers: [
     {

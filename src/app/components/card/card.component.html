@@ -1,1 +1,12 @@
-<p>card works!</p>
+<div class="card box-shadow">
+  <div class="card-body  text-center">
+    <h2 class="text-center font-weight-bold">{{ covidStatus }}</h2>
+    <h3 class="card-text font-weight-bold" [style.color]="color">
+      {{ totalCount }}
+    </h3>
+    <p class="card-text small text-gray card-percentage-container">
+      {{ percentage }}%
+      <mat-icon class="text-green">arrow_drop_down</mat-icon>
+    </p>
+  </div>
+</div>

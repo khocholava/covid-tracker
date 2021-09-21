@@ -1,3 +1,10 @@
 {
-  "navbar_logo": "Covid-19 USA"
+  "navbar_logo": "Covid-19 USA",
+  "country": "Country",
+  "newConfirmed": "New Confirmed",
+  "newDeaths": "New Deaths",
+  "newRecovered": "New Recovered",
+  "totalConfirmed": "Total Confirmed",
+  "totalDeaths": "Total Deaths",
+  "tableToolbar": "Reported Cases and Deaths by Country or Territory"
 }

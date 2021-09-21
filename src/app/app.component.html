@@ -1,9 +1,27 @@
 <app-navbar
-[title]="'navbar_logo' | transloco"
+  [title]="'navbar_logo' | transloco"
 ></app-navbar>
-<div class="content">
-<pre>
-<!--  {{data$ | async | json}}-->
-  {{countries$ | async | json}}
-</pre>
-</div>
+<ng-container *ngIf="data$ | async as covidData">
+  <div class="content">
+    <div class="card-container">
+      <ng-container *ngFor="let data of covidData.majorStats">
+        <app-card
+
+          [totalCount]="data.stat"
+          [covidStatus]="data.title"
+          [percentage]="data.percentage"
+          [color]="data.color"
+        ></app-card>
+      </ng-container>
+    </div>
+    <div class="data-table-container">
+      <app-table
+        [isPageable]="true"
+        [isSortable]="true"
+        [isFilterable]="true"
+        [tableData]="covidData.countries"
+        [tableColumns]="tableColumns"
+      ></app-table>
+    </div>
+  </div>
+</ng-container>

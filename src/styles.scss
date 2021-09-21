@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "./app/styles/mixins";
+@import "./app/styles/classes";
 html, body {
   height: 100%;
 }
@@ -7,7 +8,8 @@ html, body {
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif !important;
-  background: #f0f8ff38
+  background: #f0f8ff38;
+  font-size: 13px;
 }
 
 * {
