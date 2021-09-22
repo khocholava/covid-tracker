@@ -5,20 +5,17 @@
   flex-direction: column;
   width: 100%;
 
-  .content {
-    width: 100%;
-    @include flexCenter;
-    flex-direction: column;
-    margin: 2rem 0;
-    padding: 1rem;
+  .container {
     .card-container {
       @include flex(center, space-between, row, unset);
       flex-wrap: wrap;
       width: 100%;
-      margin-bottom: 2rem;
     }
     .data-table-container {
       width: 100%;
+    }
+    .chart-container {
+     min-height: 60vh;
     }
   }
 }

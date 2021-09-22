@@ -8,30 +8,40 @@ import {MatSliderModule} from '@angular/material/slider';
 import {COVID_TRACKING_API_BASE_URL, SUMMARY_API_BASE_URL} from './tokens';
 import {environment} from '../environments/environment';
 import {CovidDataService} from './services/covid-data.service';
-import {NavbarComponent} from './components/navbar/navbar.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTableModule} from '@angular/material/table';
-import { CardComponent } from './components/card/card.component';
-import { SpinnerComponent } from './components/spinner/spinner.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {StoreService} from './services/store.service';
 import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
-import { TableComponent } from './components/table/table.component';
 import {MatButtonModule} from '@angular/material/button';
-import { DataPropertyGetterPipe } from './components/table/data-property-getter.pipe';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {NgApexchartsModule} from 'ng-apexcharts';
+import {MatListModule} from '@angular/material/list';
+import {SharedModule} from './shared/shared.module';
+import {ReactiveFormsModule} from '@angular/forms';
+import {RouterModule, Routes} from '@angular/router';
+import {MainComponent} from './features/main/main.component';
+import {UiModule} from './components/ui/ui.module';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: MainComponent,
+    pathMatch: 'full',
+  },
+  {
+    path: 'usa-statistics',
+    loadChildren: () => import('./modules/usa-statistics/usa-statistics.module').then(m => m.UsaStatisticsModule),
+  },
+];
 
 @NgModule({
   declarations: [
-    AppComponent,
-    NavbarComponent,
-    CardComponent,
-    SpinnerComponent,
-    TableComponent,
-    DataPropertyGetterPipe,
+    MainComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -48,6 +58,12 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatFormFieldModule,
     MatInputModule,
     MatPaginatorModule,
+    NgApexchartsModule,
+    MatListModule,
+    SharedModule,
+    ReactiveFormsModule,
+    RouterModule.forRoot(routes),
+    UiModule,
   ],
   providers: [
     {
@@ -61,7 +77,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
       multi: true,
     },
     CovidDataService,
-    StoreService
+    StoreService,
   ],
   bootstrap: [AppComponent],
 })

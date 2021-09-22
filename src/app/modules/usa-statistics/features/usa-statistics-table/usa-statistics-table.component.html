@@ -1,0 +1,12 @@
+<ng-container *ngIf="data$ | async as usaStat">
+  <app-table
+    [title]="'usaStatistics' | transloco"
+    [isPageable]="false"
+    [isSortable]="false"
+    [isFilterable]="false"
+    [tableData]="usaStat"
+    [tableColumns]="tableColumns"
+  ></app-table>
+
+  <app-stat-by-state></app-stat-by-state>
+</ng-container>

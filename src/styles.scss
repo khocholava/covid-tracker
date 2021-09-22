@@ -1,6 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 @import "./app/styles/mixins";
 @import "./app/styles/classes";
+@import "./app/styles/variables";
+@import "src/app/shared/directives/mat-table-responsive.directive";
+@import "./app/styles/grid";
 html, body {
   height: 100%;
 }
@@ -8,7 +11,7 @@ html, body {
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif !important;
-  background: #f0f8ff38;
+  background: $background-primary;
   font-size: 13px;
 }
 

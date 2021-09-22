@@ -7,7 +7,7 @@ import {
   CovidStatData,
   CovidSummaryCountryType,
   CovidSummaryGlobalType,
-  CovidSummaryType,
+  CovidSummaryType, DayOneCountry, UsaCurrentStatistics, UsaStatByState,
 } from './covid-date.types';
 import {StoreService} from './store.service';
 import {Observable} from 'rxjs';
@@ -73,16 +73,16 @@ export class CovidDataService {
     );
   }
 
-  getCountries(): Observable<Array<string>> {
-    return this.storeService.getData().pipe(
-      map(item => {
-        return item.countries!.map(item => item!.Country)
-      }),
-      tap(countries => this.storeService.setCountries(countries))
-    )
+  getUsaCurrentStats(): Observable<Array<UsaCurrentStatistics>> {
+    return this.http.get<Array<UsaCurrentStatistics>>(`${this.baseUrl}/us`)
   }
 
-  getCountryData(countryCode: string) {
-    return this.http.get(`${this.summaryUrl}/total/dayone/country/${countryCode}`)
+  // @TODO map response to DayOneCountry
+  getUsaStatsByState(): Observable<Array<UsaStatByState>> {
+    return this.http.get<Array<UsaStatByState>>(`${this.baseUrl}/states`)
+  }
+
+  getCountryData(countryCode: string): Observable<Array<DayOneCountry>> {
+    return this.http.get<Array<DayOneCountry>>(`${this.summaryUrl}/total/dayone/country/${countryCode}`)
   }
 }

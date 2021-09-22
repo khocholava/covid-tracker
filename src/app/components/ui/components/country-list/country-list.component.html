@@ -1,0 +1,16 @@
+<mat-selection-list [multiple]="false">
+  <div class="list-group">
+    <mat-form-field class="w-100" appearance="outline">
+      <mat-label>{{'search' | transloco}}</mat-label>
+      <mat-icon matSuffix (click)="searchText.value && searchText.reset()">{{showSearch}}</mat-icon>
+      <input type="email" [formControl]="searchText" matInput (change)="$event.preventDefault()">
+    </mat-form-field>
+    <mat-nav-list>
+      <a mat-list-item *ngFor="let country of countries | filter: searchText.value: 'Country'"
+         (click)="clickList(country.CountryCode)">
+        <div mat-line>{{country?.Country}}</div>
+        <div mat-line><strong>{{country?.NewConfirmed}}</strong></div>
+      </a>
+    </mat-nav-list>
+  </div>
+</mat-selection-list>

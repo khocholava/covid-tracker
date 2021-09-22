@@ -1,0 +1,14 @@
+@import "src/app/styles/variables";
+@import "src/app/styles/mixins";
+
+:host {
+  width: 100%;
+  .navbar {
+    background-color: $background-primary;
+    .logo {
+      @include flexCenter;
+      height: 60px;
+      color: $hero-color;
+    }
+  }
+}

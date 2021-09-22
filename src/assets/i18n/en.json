@@ -6,5 +6,11 @@
   "newRecovered": "New Recovered",
   "totalConfirmed": "Total Confirmed",
   "totalDeaths": "Total Deaths",
-  "tableToolbar": "Reported Cases and Deaths by Country or Territory"
+  "tableToolbar": "Reported Cases and Deaths by Country or Territory",
+  "filter": "Filter",
+  "search": "Search",
+  "usaStatistics": "Usa Stats",
+  "positive": "Positive",
+  "negative": "Negative",
+  "death": "Death"
 }

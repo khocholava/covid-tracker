@@ -13,6 +13,7 @@ export class TableComponent<T> implements OnInit, AfterViewInit {
   public tableDataSource = new MatTableDataSource([]);
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
+  @Input() title!: string;
   @Input() isPageable = false;
   @Input() isSortable = false;
   @Input() isFilterable = false;
@@ -29,7 +30,6 @@ export class TableComponent<T> implements OnInit, AfterViewInit {
   }
 
   @Input() set tableData(data: any) {
-    console.log(data);
     this.setTableDataSource(data);
   }
 

@@ -1,0 +1,15 @@
+<!--<ng-container *ngIf="validateOptions(chartOptions)">-->
+<div id="chart">
+    <apx-chart
+      [responsive]="responsive"
+      [series]="chartOptions?.series"
+      [chart]="chartOptions?.chart"
+      [xaxis]="chartOptions?.xaxis"
+      [dataLabels]="chartOptions?.dataLabels"
+      [yaxis]="chartOptions?.yaxis"
+      [colors]="chartOptions?.colors"
+      [legend]="chartOptions?.legend"
+      [fill]="chartOptions?.fill"
+    ></apx-chart>
+  </div>
+<!--</ng-container>-->

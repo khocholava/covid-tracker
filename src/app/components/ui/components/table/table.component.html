@@ -2,15 +2,15 @@
 <div class="box-shadow table-container">
   <!-- Filter -->
   <div class="table-toolbar">
-    <h1>{{'tableToolbar' | transloco}}</h1>
+    <h1>{{title}}</h1>
   </div>
   <ng-container *ngIf="isFilterable" [matColumnDef]="this.rowActionIcon">
     <mat-form-field>
-      <mat-label>Filter</mat-label>
-      <input matInput (keyup)="applyFilter($event)" placeholder="filter">
+      <mat-label>{{'filter' | transloco}}</mat-label>
+      <input matInput (keyup)="applyFilter($event)" >
     </mat-form-field>
   </ng-container>
-  <table class="table" mat-table [dataSource]="tableDataSource">
+  <table class="table" matTableResponsive mat-table [dataSource]="tableDataSource">
     <ng-container *ngFor="let tableColumn of tableColumns" [matColumnDef]="tableColumn.name">
       {{tableColumn | json}}
       <th mat-header-cell *matHeaderCellDef [class.text-right]="tableColumn.position == 'right'">

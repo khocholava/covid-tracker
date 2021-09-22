@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {CovidStatusType} from '../../services/covid-date.types';
+import {CovidStatusType} from '../../../../services/covid-date.types';
 
 @Component({
   selector: 'app-card',
