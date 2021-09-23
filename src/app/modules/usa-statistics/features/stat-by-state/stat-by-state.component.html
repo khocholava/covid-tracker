@@ -1,5 +1,15 @@
-<ng-container *ngIf="data$ | async as countryData">
-<!--  <app-chart-->
-<!--    [countryData]="countryData"-->
-<!--  ></app-chart>-->
-</ng-container>
+<div class="container mt-2">
+  <div class="row">
+    <ng-container *ngIf="data$ | async as countryData">
+      <ng-container *ngFor="let data of countryData">
+        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12 mb-2">
+          <app-stat-card
+            [state]="data.state"
+            [death]="data.death"
+            [recovered]="data.hospitalized"
+          ></app-stat-card>
+        </div>
+      </ng-container>
+    </ng-container>
+  </div>
+</div>

@@ -5,9 +5,10 @@
   width: 100%;
   .navbar {
     background-color: $background-primary;
+    @include flex(center, space-between, row, unset);
     .logo {
       @include flexCenter;
-      height: 60px;
+      font-size: 18px;
       color: $hero-color;
     }
   }

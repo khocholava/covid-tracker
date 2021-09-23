@@ -12,5 +12,7 @@
   "usaStatistics": "Usa Stats",
   "positive": "Positive",
   "negative": "Negative",
-  "death": "Death"
+  "death": "Death",
+  "recovered": "Recovered",
+  "state": "State"
 }

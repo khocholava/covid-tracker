@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {CovidDataService} from '../../../../services/covid-data.service';
-import {TableColumn} from '../../../../components/ui/components/table/table.types';
+import {TableColumn} from '../../../ui/components/table/table.types';
+import {Observable} from 'rxjs';
+import {UsaStatByState} from '../../../../services/covid-date.types';
 
 @Component({
   selector: 'app-usa-statistics-table',
@@ -9,6 +11,7 @@ import {TableColumn} from '../../../../components/ui/components/table/table.type
 })
 export class UsaStatisticsTableComponent implements OnInit {
   data$ = this.covidDataService.getUsaCurrentStats();
+  dataByState$:Observable<Array<UsaStatByState>> = this.covidDataService.getUsaStatsByState()
   tableColumns: Array<TableColumn> = [];
 
 

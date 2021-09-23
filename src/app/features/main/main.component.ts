@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Observable} from 'rxjs';
 import {DayOneCountry} from '../../services/covid-date.types';
-import {TableColumn} from '../../components/ui/components/table/table.types';
+import {TableColumn} from '../../modules/ui/components/table/table.types';
 import {FormControl} from '@angular/forms';
 import {CovidDataService} from '../../services/covid-data.service';
 import {StoreService} from '../../services/store.service';

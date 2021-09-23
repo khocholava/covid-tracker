@@ -1,0 +1,20 @@
+@import "src/app/styles/mixins";
+
+:host {
+  .card {
+    .card-body {
+      text-align: center;
+      padding: 1rem;
+      h2 {
+        font-size: 1.2rem;
+      }
+      h3 {
+        font-size: 1.5rem;
+      }
+      .card-percentage-container {
+        @include flexCenter;
+        margin: 0;
+      }
+    }
+  }
+}

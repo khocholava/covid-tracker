@@ -1,7 +1,7 @@
 import {Inject, Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {COVID_TRACKING_API_BASE_URL, SUMMARY_API_BASE_URL} from '../tokens';
-import {map, tap} from 'rxjs/operators';
+import {map, tap, toArray} from 'rxjs/operators';
 import {
   COVID_STATUS,
   CovidStatData,
@@ -10,7 +10,8 @@ import {
   CovidSummaryType, DayOneCountry, UsaCurrentStatistics, UsaStatByState,
 } from './covid-date.types';
 import {StoreService} from './store.service';
-import {Observable} from 'rxjs';
+import {from, Observable} from 'rxjs';
+import {flatMap} from 'rxjs/internal/operators';
 
 @Injectable()
 export class CovidDataService {
@@ -77,7 +78,6 @@ export class CovidDataService {
     return this.http.get<Array<UsaCurrentStatistics>>(`${this.baseUrl}/us`)
   }
 
-  // @TODO map response to DayOneCountry
   getUsaStatsByState(): Observable<Array<UsaStatByState>> {
     return this.http.get<Array<UsaStatByState>>(`${this.baseUrl}/states`)
   }

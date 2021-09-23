@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {CovidDataService} from '../../../../services/covid-data.service';
 import {Observable} from 'rxjs';
-import {UsaStatByState} from '../../../../services/covid-date.types';
+import {DayOneCountry, UsaStatByState} from '../../../../services/covid-date.types';
 
 @Component({
   selector: 'app-stat-by-state',
@@ -9,7 +9,7 @@ import {UsaStatByState} from '../../../../services/covid-date.types';
   styleUrls: ['./stat-by-state.component.scss'],
 })
 export class StatByStateComponent implements OnInit {
-  data$: Observable<Array<UsaStatByState>> = this.covidDataService.getUsaStatsByState()
+  @Input() data$!: Observable<Array<UsaStatByState>>;
 
   constructor(
     private covidDataService: CovidDataService,

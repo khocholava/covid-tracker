@@ -24,7 +24,7 @@ import {SharedModule} from './shared/shared.module';
 import {ReactiveFormsModule} from '@angular/forms';
 import {RouterModule, Routes} from '@angular/router';
 import {MainComponent} from './features/main/main.component';
-import {UiModule} from './components/ui/ui.module';
+import {UiModule} from './modules/ui/ui.module';
 
 const routes: Routes = [
   {

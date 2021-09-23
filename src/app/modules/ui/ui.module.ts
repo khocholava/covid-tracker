@@ -19,6 +19,9 @@ import {MatListModule} from '@angular/material/list';
 import {RouterModule} from '@angular/router';
 import {MatIconModule} from '@angular/material/icon';
 import {ReactiveFormsModule} from '@angular/forms';
+import { StatCardComponent } from './components/stat-card/stat-card.component';
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
 
 
 @NgModule({
@@ -29,6 +32,7 @@ import {ReactiveFormsModule} from '@angular/forms';
     TableComponent,
     CoronaChartComponent,
     CountryListComponent,
+    StatCardComponent,
   ],
   exports: [
     TableComponent,
@@ -36,6 +40,7 @@ import {ReactiveFormsModule} from '@angular/forms';
     CountryListComponent,
     CardComponent,
     NavbarComponent,
+    StatCardComponent,
   ],
   imports: [
     CommonModule,
@@ -52,6 +57,8 @@ import {ReactiveFormsModule} from '@angular/forms';
     RouterModule,
     MatIconModule,
     ReactiveFormsModule,
+    MatCardModule,
+    MatButtonModule,
   ],
 })
 export class UiModule {

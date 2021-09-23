@@ -7,6 +7,5 @@
     [tableData]="usaStat"
     [tableColumns]="tableColumns"
   ></app-table>
-
-  <app-stat-by-state></app-stat-by-state>
+  <app-stat-by-state [data$]="dataByState$"></app-stat-by-state>
 </ng-container>
